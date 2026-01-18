@@ -3,377 +3,79 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mon site</title>
-  <meta name="description" content="Description courte du site." />
-
-  <style>
-    :root{
-      --bg: #0b0c10;
-      --card: #11131a;
-      --text: #e8e8ea;
-      --muted: #b7bac4;
-      --brand: #6ee7ff;
-      --border: rgba(255,255,255,.12);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 16px;
-      --max: 1100px;
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-      color: var(--text);
-      background: radial-gradient(1200px 800px at 20% -10%, rgba(110,231,255,.15), transparent 60%),
-                  radial-gradient(900px 700px at 90% 10%, rgba(167,139,250,.12), transparent 55%),
-                  var(--bg);
-      line-height:1.5;
-    }
-
-    a{ color:inherit; text-decoration:none; }
-    .container{ width:min(var(--max), 92vw); margin:0 auto; }
-
-    /* Header */
-    header{
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(10px);
-      background: rgba(11,12,16,.7);
-      border-bottom: 1px solid var(--border);
-      z-index: 50;
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 14px 0;
-      gap: 14px;
-    }
-    .logo{
-      display:flex; align-items:center; gap:10px;
-      font-weight:700;
-      letter-spacing:.2px;
-    }
-    .logo-badge{
-      width:34px; height:34px; border-radius:12px;
-      background: linear-gradient(135deg, var(--brand), rgba(167,139,250,1));
-      box-shadow: var(--shadow);
-    }
-    nav ul{
-      list-style:none;
-      display:flex;
-      gap: 14px;
-      padding:0; margin:0;
-    }
-    nav a{
-      color: var(--muted);
-      padding: 8px 10px;
-      border-radius: 10px;
-    }
-    nav a:hover{ color: var(--text); background: rgba(255,255,255,.06); }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding: 10px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      cursor:pointer;
-      white-space:nowrap;
-    }
-    .btn:hover{ background: rgba(255,255,255,.07); }
-    .btn.primary{
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--brand), rgba(167,139,250,1));
-      color:#071018;
-      font-weight: 650;
-    }
-    .btn.primary:hover{ filter: brightness(1.05); }
-
-    /* Hero */
-    .hero{
-      padding: 64px 0 30px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 22px;
-      align-items:stretch;
-    }
-    .hero h1{
-      margin: 0 0 12px;
-      font-size: clamp(28px, 4vw, 46px);
-      line-height:1.08;
-      letter-spacing: -0.02em;
-    }
-    .hero p{
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: clamp(15px, 1.4vw, 18px);
-    }
-    .hero-actions{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 8px; }
-    .pill-row{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 18px; }
-    .pill{
-      padding: 8px 10px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(255,255,255,.03);
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* Card */
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-    }
-    .mock{
-      height: 100%;
-      min-height: 260px;
-      display:flex;
-      flex-direction:column;
-      gap: 12px;
-    }
-    .mock-top{
-      display:flex; align-items:center; justify-content:space-between; gap: 10px;
-    }
-    .dots{ display:flex; gap: 6px; }
-    .dot{ width:10px; height:10px; border-radius:999px; background: rgba(255,255,255,.18); }
-    .mock-screen{
-      flex:1;
-      border-radius: 14px;
-      border: 1px dashed rgba(255,255,255,.18);
-      background:
-        linear-gradient(135deg, rgba(110,231,255,.10), rgba(167,139,250,.08)),
-        rgba(0,0,0,.20);
-      display:grid;
-      place-items:center;
-      color: rgba(255,255,255,.7);
-      text-align:center;
-      padding: 14px;
-    }
-
-    /* Sections */
-    section{ padding: 28px 0; }
-    .section-title{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap: 16px;
-      margin-bottom: 14px;
-    }
-    .section-title h2{ margin:0; font-size: 22px; letter-spacing:-.01em; }
-    .section-title p{ margin:0; color:var(--muted); max-width: 60ch; }
-
-    .grid-3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .feature h3{ margin: 0 0 6px; font-size: 16px; }
-    .feature p{ margin: 0; color: var(--muted); font-size: 14px; }
-    .icon{
-      width: 38px; height: 38px;
-      border-radius: 14px;
-      display:grid; place-items:center;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    /* Footer */
-    footer{
-      padding: 26px 0 40px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-    }
-    .footer-row{
-      display:flex;
-      justify-content:space-between;
-      gap: 14px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      nav ul{ display:none; }
-      .grid-3{ grid-template-columns: 1fr; }
-    }
-  </style>
+  <title>Fêtes taurines — Présentation</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <header>
-    <div class="container nav">
-      <a class="logo" href="#">
-        <span class="logo-badge" aria-hidden="true"></span>
-        <span>NomDuSite</span>
-      </a>
-
-      <nav aria-label="Navigation principale">
-        <ul>
-          <li><a href="#features">Fonctionnalités</a></li>
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <a class="btn primary" href="#contact">Call to action</a>
+  <!-- Menu plein écran -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <button class="menu-close" id="menuClose" aria-label="Fermer le menu">✕</button>
+    <div class="menu-inner">
+      <ul class="menu-list" aria-label="Menu">
+        <li><a class="active" href="index.html" data-link>Présentation des fêtes taurines</a></li>
+        <li><a href="legislation.html" data-link>Législation (France & autres pays)</a></li>
+        <li><a href="chronologie.html" data-link>Chronologie</a></li>
+        <li><a href="bibliographie.html" data-link>Bibliographie</a></li>
+      </ul>
     </div>
-  </header>
+  </div>
 
-  <main>
-    <div class="container hero">
-      <div class="hero-grid">
-        <div class="card">
-          <h1>Titre principal clair<br/>et une promesse simple</h1>
-          <p>
-            Un sous-titre court qui explique ce que tu fais, pour qui, et pourquoi c’est utile.
-            (Je remplacerai ça par le texte du site à reproduire.)
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="#contact">Commencer</a>
-            <a class="btn" href="#features">Voir les détails</a>
-          </div>
-
-          <div class="pill-row" aria-label="Points clés">
-            <span class="pill">⚡ Rapide</span>
-            <span class="pill">🔒 Simple</span>
-            <span class="pill">📱 Responsive</span>
-          </div>
-        </div>
-
-        <div class="card mock" aria-label="Aperçu">
-          <div class="mock-top">
-            <strong>Aperçu</strong>
-            <div class="dots" aria-hidden="true">
-              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            </div>
-          </div>
-          <div class="mock-screen">
-            <div>
-              <div style="font-weight:700; margin-bottom:6px;">Zone visuelle</div>
-              <div style="font-size:13px; opacity:.9;">
-                Ici je reproduis l’image/maquette du site : hero, screenshot, illustration, etc.
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span>Fêtes taurines</span><small>— dossier</small>
       </div>
+      <button class="hamburger" id="menuOpen" aria-label="Ouvrir le menu" aria-controls="menu" aria-expanded="false">
+        <div class="hamburger-lines" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+      </button>
     </div>
+  </div>
 
-    <section id="features">
-      <div class="container">
-        <div class="section-title">
-          <div>
-            <h2>Fonctionnalités</h2>
-            <p>Trois blocs simples (je peux en faire autant que nécessaire selon le site).</p>
-          </div>
-        </div>
-
-        <div class="grid-3">
-          <div class="card feature">
-            <div class="icon">1</div>
-            <h3>Bloc #1</h3>
-            <p>Description courte.</p>
-          </div>
-          <div class="card feature">
-            <div class="icon">2</div>
-            <h3>Bloc #2</h3>
-            <p>Description courte.</p>
-          </div>
-          <div class="card feature">
-            <div class="icon">3</div>
-            <h3>Bloc #3</h3>
-            <p>Description courte.</p>
-          </div>
-        </div>
+  <main class="container">
+    <section class="reveal">
+      <div class="section-title">
+        <h1 class="highlight-title">Présentation</h1>
+        <p class="lead">
+          Présentation générale des fêtes taurines : formes, origines, enjeux culturels et controverses.
+        </p>
       </div>
+
+      <div class="card prose">
+        <p>
+          Remplace ce texte par ta présentation. Tu peux structurer avec des paragraphes et des <strong>mots en gras</strong>.
+        </p>
+        <p>
+          Exemple : distinguer les pratiques (corrida / course camarguaise / course landaise), puis expliquer les enjeux
+          (tradition, spectacle, animal, économie locale, symboles).
+        </p>
+      </div>
+
+      <p class="note">Astuce : chaque bloc “card” apparaît avec l’effet de défilement.</p>
     </section>
 
-    <section id="about">
-      <div class="container">
-        <div class="section-title">
-          <div>
-            <h2>À propos</h2>
-            <p>Une section texte + éventuellement une liste ou des chiffres, selon le design.</p>
-          </div>
-        </div>
+    <hr class="divider" />
 
-        <div class="card">
-          <p style="margin:0; color:var(--muted);">
-            Contenu à remplacer par celui du site d’origine (ou ton contenu). Je peux aussi intégrer des images,
-            icônes en SVG inline, et une section FAQ.
-          </p>
-        </div>
+    <section class="reveal">
+      <div class="section-title">
+        <h2 class="highlight-title">Plan</h2>
+        <p class="lead">Le menu ouvre des pages séparées (pas tout sur une seule page).</p>
       </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="section-title">
-          <div>
-            <h2>Contact</h2>
-            <p>Formulaire minimal (sans backend). Pour l’envoi, on peut utiliser Formspree / Netlify Forms.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <form onsubmit="event.preventDefault(); alert('Formulaire démo (à connecter si besoin).');">
-            <div style="display:grid; gap:10px; grid-template-columns: 1fr 1fr;">
-              <label>
-                <div style="font-size:13px; color:var(--muted); margin-bottom:6px;">Nom</div>
-                <input required type="text" name="name" placeholder="Ton nom"
-                  style="width:100%; padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(0,0,0,.2); color:var(--text);"/>
-              </label>
-
-              <label>
-                <div style="font-size:13px; color:var(--muted); margin-bottom:6px;">Email</div>
-                <input required type="email" name="email" placeholder="toi@email.com"
-                  style="width:100%; padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(0,0,0,.2); color:var(--text);"/>
-              </label>
-            </div>
-
-            <label style="display:block; margin-top:10px;">
-              <div style="font-size:13px; color:var(--muted); margin-bottom:6px;">Message</div>
-              <textarea required name="message" rows="4" placeholder="Ton message..."
-                style="width:100%; padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(0,0,0,.2); color:var(--text); resize:vertical;"></textarea>
-            </label>
-
-            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-              <button class="btn primary" type="submit">Envoyer</button>
-              <a class="btn" href="#">Retour en haut</a>
-            </div>
-          </form>
-        </div>
+      <div class="card prose">
+        <p>• Présentation des fêtes taurines</p>
+        <p>• Législation en France et dans d’autres pays</p>
+        <p>• Chronologie</p>
+        <p>• Bibliographie</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-row">
-      <div>© <span id="year"></span> NomDuSite</div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="#">Mentions</a>
-        <a href="#">Confidentialité</a>
-      </div>
-    </div>
+    <div class="container">© <span id="year"></span></div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
