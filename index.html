@@ -1,0 +1,864 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="fr"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Fêtes taurines — Dossier&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Présentation des fêtes taurines, législation, chronologie et bibliographie." /&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--text: #1f2328;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--muted: #5b6470;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>--accent: #ff5a3c; <span class="Apple-converted-space">    </span>/* orange (menu + timeline) */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--highlight: #7fe3e6;<span class="Apple-converted-space">  </span>/* turquoise (bande derrière les titres) */</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>--line: #e6e8eb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--max: 980px;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>--shadow: 0 10px 30px rgba(0,0,0,.10);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--radius: 18px;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>--mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>*{ box-sizing: border-box; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>html, body { height: 100%; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--sans);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--bg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.65;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-font-smoothing: antialiased;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-moz-osx-font-smoothing: grayscale;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>a{ color: inherit; text-decoration: none; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.container{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: min(var(--max), 92vw);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Top bar (hamburger like your 3rd image) */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.topbar{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: sticky;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 50;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,.92);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(10px);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.topbar-inner{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 14px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: baseline;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 750;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.02em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand small{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hamburger{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 48px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 44px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>place-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hamburger:focus-visible{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>outline: 3px solid rgba(127,227,230,.6);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>outline-offset: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hamburger-lines{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 26px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hamburger-lines span{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 3px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #2b2f36;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Fullscreen menu overlay (like your 1st image) */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.menu{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>inset: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,.98);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 100;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.menu.open{ display: grid; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.menu-inner{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>place-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.menu-list{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>list-style: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.menu-list a{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(22px, 3vw, 34px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 800;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.02em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #2b2f36;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.menu-list a:hover{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(0,0,0,.04);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.menu-list a.active{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.menu-close{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>right: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 48px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 44px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 800;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Page spacing */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>main{ padding: 26px 0 80px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Section title with highlight bar behind (like your 2nd image) */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.section-title{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 26px 0 14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.highlight-title{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--mono);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(36px, 5vw, 56px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.05;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.02em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 6px 10px 6px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.highlight-title::before{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>bottom: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 42%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--highlight);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: -1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: skewX(-10deg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: .95;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.lead{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 16px 0 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 72ch;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Text blocks */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.prose{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 80ch;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.prose p{ margin: 12px 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.prose strong{ font-weight: 800; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.note{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Divider */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.divider{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 34px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Timeline (like your 3rd image) */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.timeline-wrap{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.timeline{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-left: 86px; /* space for line + circles */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.timeline::before{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 42px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>bottom: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: .95;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.t-item{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 0 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* extra spacing when "change d'année / section" */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.t-item.break{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.t-item.section{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-top: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.t-badge{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: -86px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 86px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>place-items: start center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.flag{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: .95;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.year{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 72px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 72px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 3px solid var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>place-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: .02em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.year small{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: .02em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.t-text{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #2b2f36;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 78ch;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.t-text b{ font-weight: 900; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.t-subtitle{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.02em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 0 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.t-section-label{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: .02em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-left: 4px solid var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-left: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Bibliography list */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.biblio{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 16px 0 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-left: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #2b2f36;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.biblio li{ margin: 10px 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.biblio em{ color: var(--muted); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Footer */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px 0 26px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Responsive */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 780px){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.timeline{ padding-left: 76px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.timeline::before{ left: 36px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.t-badge{ left: -76px; width: 76px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.year{ width: 64px; height: 64px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.lead, .prose, .t-text{ font-size: 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Small smooth feel */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>html{ scroll-behavior: smooth; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Optional: reduce motion */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (prefers-reduced-motion: reduce){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>html{ scroll-behavior: auto; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Fullscreen menu --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="menu" id="menu" aria-hidden="true"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="menu-close" id="menuClose" aria-label="Fermer le menu"&gt;✕&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="menu-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;ul class="menu-list" role="navigation" aria-label="Menu"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#presentation" data-link&gt;Présentation des fêtes taurines&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#legislation" data-link&gt;Législation (France &amp; autres pays)&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#chronologie" data-link&gt;Chronologie&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#bibliographie" data-link&gt;Bibliographie&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Top bar --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="topbar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container topbar-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="brand"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Fêtes taurines&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;small&gt;— dossier&lt;/small&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="hamburger" id="menuOpen" aria-label="Ouvrir le menu" aria-controls="menu" aria-expanded="false"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hamburger-lines" aria-hidden="true"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;main class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PRESENTATION --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="presentation" aria-label="Présentation des fêtes taurines"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="highlight-title"&gt;Présentation&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="lead"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Cette section introduit les fêtes taurines : leurs formes, leurs logiques (rituel / sport / tradition),</p>
+<p class="p1"><span class="Apple-converted-space">          </span>et les enjeux qui expliquent la controverse.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="prose"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Les fêtes taurines regroupent plusieurs pratiques. Certaines impliquent des &lt;strong&gt;blessures&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>voire la &lt;strong&gt;mise à mort&lt;/strong&gt; (ex. corrida), d’autres se présentent comme des jeux ou sports</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;strong&gt;sans mise à mort&lt;/strong&gt; (ex. course camarguaise, course landaise).</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Le dossier propose ensuite un point “état de l’art” sur la &lt;strong&gt;législation&lt;/strong&gt; (France et autres pays),</p>
+<p class="p1"><span class="Apple-converted-space">          </span>une &lt;strong&gt;chronologie&lt;/strong&gt; des repères (lois, décisions, débats), et une &lt;strong&gt;bibliographie&lt;/strong&gt;.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Astuce : tu peux remplacer ces paragraphes par ton propre texte, sans toucher au design.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;hr class="divider" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- LEGISLATION --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="legislation" aria-label="Législation en France et dans d'autres pays"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="highlight-title"&gt;Législation&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="lead"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>État de l’art : statut juridique, exceptions, interdictions locales, évolutions récentes.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="prose"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;I/ Corrida espagnole&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Ce modèle repose sur un rituel en trois actes (le &lt;em&gt;tercio&lt;/em&gt;) où l’animal est affaibli avant d’être mis à mort.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;Espagne : le bastion législatif&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>La pratique peut être protégée par un statut culturel, mais la fracture sociale demeure forte. Le débat porte notamment</p>
+<p class="p1"><span class="Apple-converted-space">          </span>sur les subventions publiques et la protection nationale. :contentReference[oaicite:2]{index=2}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;France : une exception géographique&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Interdite sur une grande partie du territoire, la corrida peut bénéficier d’une dérogation au nom d’une</p>
+<p class="p1"><span class="Apple-converted-space">          </span>“tradition locale ininterrompue”. Les controverses contemporaines portent aussi sur l’accès des mineurs. :contentReference[oaicite:3]{index=3}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;Amériques : interdictions partielles et modèles alternatifs&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Certains pays connaissent des interdictions progressives ou des cadres “sans mise à mort”, tandis que d’autres oscillent</p>
+<p class="p1"><span class="Apple-converted-space">          </span>au rythme de décisions judiciaires et de mobilisations. :contentReference[oaicite:4]{index=4}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;II/ Fêtes traditionnelles sans blessure ni mise à mort&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>On retrouve notamment des pratiques sportives (Camargue, Landes) et des formes “hybrides” ou “bloodless”</p>
+<p class="p1"><span class="Apple-converted-space">          </span>dans certains contextes. :contentReference[oaicite:5]{index=5}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Tu peux me dire : “remplace la partie législation par mon texte” (copier/coller), et je te renvoie une version clean.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;hr class="divider" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- CHRONOLOGIE --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="chronologie" aria-label="Chronologie"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="highlight-title"&gt;Chronologie&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="lead"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Repères historiques et juridiques (lois, décisions, débats). Mise en page inspirée de ta 3ᵉ image.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="timeline" role="list"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Section label --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item section" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-section-label"&gt;France — repères principaux&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;Éléments issus des tirets de ton document chronologie. :contentReference[oaicite:6]{index=6}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="Europe"&gt;🇪🇺&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;&lt;small&gt;XVIe&lt;/small&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Premiers témoignages documentés de &lt;b&gt;jeux taurins&lt;/b&gt;.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="Espagne"&gt;🇪🇸&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;1752&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;15 août 1752 (Ronda, Espagne)&lt;/b&gt; : épisode souvent présenté comme un repère de la corrida moderne</p>
+<p class="p1"><span class="Apple-converted-space">              </span>(Francisco Romero). Il demande de tuer lui-même le taureau à la fin d’une course après l’avoir fait charger.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="France"&gt;🇫🇷&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;1850&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;2 juillet 1850 — Loi “Grammont”&lt;/b&gt; : première grande loi pénale française contre les mauvais traitements</p>
+<p class="p1"><span class="Apple-converted-space">              </span>envers les animaux domestiques (incrimination surtout des traitements publics).</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="France"&gt;🇫🇷&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;1951&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;24 avril 1951 — Loi n°51-461 (“Ramanory-Sourbet”)&lt;/b&gt; : ajoute une exception lorsque</p>
+<p class="p1"><span class="Apple-converted-space">              </span>une &lt;b&gt;tradition ininterrompue&lt;/b&gt; peut être invoquée.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="France"&gt;🇫🇷&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;1959&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;7 septembre 1959 — Décret&lt;/b&gt; : précision importante : la tradition doit être &lt;b&gt;locale&lt;/b&gt; et ininterrompue.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="France"&gt;🇫🇷&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;&lt;small&gt;CP&lt;/small&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Consolidation dans le &lt;b&gt;Code pénal&lt;/b&gt; (article 521-1) : réprime les sévices graves / actes de cruauté,</p>
+<p class="p1"><span class="Apple-converted-space">              </span>tout en maintenant l’exception en cas de “tradition locale ininterrompue”.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="France"&gt;🇫🇷&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;1991&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Création du &lt;b&gt;CRAC&lt;/b&gt; (Comité Radicalement Anti Corrida Europe).</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="France"&gt;🇫🇷&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2011&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Inscription de la corrida à l’Inventaire du &lt;b&gt;patrimoine culturel immatériel&lt;/b&gt; (PCI) de la France.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="France"&gt;🇫🇷&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2012&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;21 septembre 2012&lt;/b&gt; — Conseil constitutionnel (2012-271 QPC) : juge conforme à la Constitution</p>
+<p class="p1"><span class="Apple-converted-space">              </span>l’exception “tradition locale ininterrompue”.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="France"&gt;🇫🇷&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2015&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;16 février 2015&lt;/b&gt; — Code civil (article 515-14) : “Les animaux sont des êtres vivants doués de sensibilité…”</p>
+<p class="p1"><span class="Apple-converted-space">              </span>(souvent mobilisé dans les argumentaires).</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="France"&gt;🇫🇷&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2016&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;27 juillet 2016&lt;/b&gt; — Conseil d’État (décision n°392277) : fin du contentieux relatif à l’inscription au PCI.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="France"&gt;🇫🇷&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2022&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;11 octobre 2022&lt;/b&gt; : dépôt à l’Assemblée nationale d’une proposition de loi visant à abolir la corrida (n°329),</p>
+<p class="p1"><span class="Apple-converted-space">              </span>puis &lt;b&gt;24 novembre 2022&lt;/b&gt; : retrait.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="France"&gt;🇫🇷&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2024&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;Novembre 2024&lt;/b&gt; : débat au Sénat sur l’interdiction d’accès des moins de 16 ans (rejet).</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Spain block --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item section" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-section-label"&gt;Espagne — interdictions régionales &amp; contre-mesures&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;Repères extraits de la partie “Espagne” du document. :contentReference[oaicite:7]{index=7}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="Espagne"&gt;🇪🇸&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2010&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;Juillet 2010&lt;/b&gt; : Catalogne — vote de l’interdiction des corridas.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="Espagne"&gt;🇪🇸&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2013&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;12 novembre 2013&lt;/b&gt; : Loi 18/2013 — la tauromachie définie comme patrimoine culturel à protéger.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="Espagne"&gt;🇪🇸&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2016&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;20 octobre 2016&lt;/b&gt; : Tribunal constitutionnel — annule l’interdiction catalane (cadre national de protection).</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="ONU"&gt;🇺🇳&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2018&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Comité des droits de l’enfant (ONU) : recommandation d’éloigner les mineurs de la violence de la tauromachie.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="Espagne"&gt;🇪🇸&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2025&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;7 octobre 2025&lt;/b&gt; : ILP “No es mi cultura” — le Congrès rejette la poursuite de l’initiative.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Portugal + Americas block --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item section" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-section-label"&gt;Portugal &amp; Amériques — repères&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;Synthèse à partir des tirets des sections “Portugal” et “Amériques”. :contentReference[oaicite:8]{index=8}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="Portugal"&gt;🇵🇹&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;1928&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Portugal : référence fréquente à une interdiction de la mise à mort en arène.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="Portugal"&gt;🇵🇹&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2002&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Exception locale (ex. Barrancos) : levée/exception permettant de tuer en arène au nom de la tradition.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="Mexique"&gt;🇲🇽&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2022&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;17 juin 2022&lt;/b&gt; : Mexico (capitale) — décision judiciaire suspendant/interdisant des corridas (rebondissements ensuite).</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="Mexique"&gt;🇲🇽&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2023&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;Décembre 2023&lt;/b&gt; : rebond judiciaire — annulation d’une suspension antérieure (selon suivis/analyses).</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="Mexique"&gt;🇲🇽&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2025&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;18 mars 2025&lt;/b&gt; : adoption d’un cadre de “corridas sans violence” (sans mise à mort, interdiction d’instruments blessants),</p>
+<p class="p1"><span class="Apple-converted-space">              </span>contesté par les deux camps.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- EU subsidies block --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item section" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-section-label"&gt;Financements publics (UE) — repères&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;D’après les tirets “Subventions / argent public (UE)”. :contentReference[oaicite:9]{index=9}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="UE"&gt;🇪🇺&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2015&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;28 octobre 2015&lt;/b&gt; : vote d’un amendement au Parlement européen (débat PAC et élevage lié à la tauromachie).</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="t-item break" role="listitem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="flag" title="UE"&gt;🇪🇺&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="year"&gt;2020&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="t-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;b&gt;22 octobre 2020&lt;/b&gt; : nouveau vote/amendement au Parlement européen sur la question des aides PAC.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Si tu veux “plus d’espace quand on change d’année”, je peux accentuer encore l’écart (actuellement : classe &lt;code&gt;.break&lt;/code&gt;).</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Et si tu me colles le texte exact “à puces” que tu veux garder, je peux le coller mot pour mot.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;hr class="divider" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- BIBLIOGRAPHIE --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="bibliographie" aria-label="Bibliographie"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="highlight-title"&gt;Bibliographie&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="lead"&gt;Liste de références (articles, ouvrages, rapports, décisions, etc.).&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="prose"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul class="biblio"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;b&gt;Référence 1&lt;/b&gt; — Auteur, &lt;em&gt;Titre&lt;/em&gt;, année, éditeur / revue.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;b&gt;Référence 2&lt;/b&gt; — Rapport / Institution, &lt;em&gt;Titre&lt;/em&gt;, année.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;b&gt;Référence 3&lt;/b&gt; — Décision / Juridiction, &lt;em&gt;Référence&lt;/em&gt;, date.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Dis-moi si tu veux une biblio en format APA/Chicago, et je te la mets au bon format.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>© &lt;span id="year"&gt;&lt;/span&gt; — Site statique (HTML/CSS). Menu plein écran + chronologie.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// --- Menu overlay toggle (simple hosting-friendly JS) ---</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const menu = document.getElementById("menu");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const openBtn = document.getElementById("menuOpen");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const closeBtn = document.getElementById("menuClose");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const links = Array.from(document.querySelectorAll("[data-link]"));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function openMenu(){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>menu.classList.add("open");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>menu.setAttribute("aria-hidden", "false");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>openBtn.setAttribute("aria-expanded", "true");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// focus for accessibility</p>
+<p class="p1"><span class="Apple-converted-space">      </span>closeBtn.focus();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>setActiveLink();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function closeMenu(){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>menu.classList.remove("open");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>menu.setAttribute("aria-hidden", "true");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>openBtn.setAttribute("aria-expanded", "false");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>openBtn.focus();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>openBtn.addEventListener("click", openMenu);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>closeBtn.addEventListener("click", closeMenu);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Close on ESC</p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.addEventListener("keydown", (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(e.key === "Escape" &amp;&amp; menu.classList.contains("open")) closeMenu();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Close when clicking a link</p>
+<p class="p1"><span class="Apple-converted-space">    </span>links.forEach(a =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>a.addEventListener("click", () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>closeMenu();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Highlight active section link (like your first image: one item orange)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const sections = ["presentation","legislation","chronologie","bibliographie"]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.map(id =&gt; document.getElementById(id));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function setActiveLink(){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const y = window.scrollY + 120;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let currentId = "presentation";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>for(const s of sections){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(s &amp;&amp; s.offsetTop &lt;= y) currentId = s.id;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>links.forEach(a =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const href = a.getAttribute("href") || "";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>a.classList.toggle("active", href === "#" + currentId);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.addEventListener("scroll", () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(!menu.classList.contains("open")) return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>setActiveLink();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Footer year</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("year").textContent = new Date().getFullYear();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
