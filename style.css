@@ -364,3 +364,69 @@ footer{
   color: #2b2a28;
 }
 
+/* Drapeau à gauche des bulles */
+.t-badge{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  left: -86px;
+  top: 0;
+  width: 86px;
+}
+.t-flag{
+  font-size: 18px;
+  line-height: 1;
+  opacity: .95;
+}
+
+/* Branches (pays) : colonne décalée avec sa propre ligne */
+.branch{
+  margin: 16px 0 10px 140px;   /* décale la branche vers la droite */
+  padding-left: 86px;          /* place pour la ligne + bulles */
+  position: relative;
+}
+
+.branch::before{
+  content:"";
+  position:absolute;
+  left: 42px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 999px;
+  background: var(--copper);   /* couleur branche */
+  opacity: .95;
+}
+
+/* "pont" entre la ligne principale et la branche */
+.branch::after{
+  content:"";
+  position:absolute;
+  left: -98px;     /* tire depuis la ligne principale */
+  top: 34px;       /* aligné visuellement sur la première bulle */
+  width: 98px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--copper);
+  opacity: .35;
+}
+
+/* Titre de branche */
+.branch-label{
+  display: inline-block;
+  font-weight: 950;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--copper);
+  border-left: 5px solid var(--copper);
+  padding-left: 10px;
+  margin: 0 0 10px;
+}
+
+/* Ligne principale : garde ta couleur bordeaux */
+.timeline::before{
+  background: var(--wine);
+}
