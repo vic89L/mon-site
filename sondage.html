@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fêtes taurines — Résultats du sondage</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Menu plein écran -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <button class="menu-close" id="menuClose" aria-label="Fermer le menu">✕</button>
+    <div class="menu-inner">
+      <ul class="menu-list" aria-label="Menu">
+        <li><a href="index.html" data-link>Présentation des fêtes taurines</a></li>
+        <li><a href="acteurs.html" data-link>Acteurs</a></li>
+        <li><a class="active" href="sondage.html" data-link>Résultats du sondage</a></li>
+        <li><a href="legislation.html" data-link>Législation (France & autres pays)</a></li>
+        <li><a href="chronologie.html" data-link>Chronologie</a></li>
+        <li><a href="bibliographie.html" data-link>Bibliographie</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span>Fêtes taurines</span><small>— dossier</small>
+      </div>
+      <button class="hamburger" id="menuOpen" aria-label="Ouvrir le menu" aria-controls="menu" aria-expanded="false">
+        <div class="hamburger-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- Titre page -->
+    <section class="reveal">
+      <div class="section-title">
+        <h1 class="highlight-title">Résultats du sondage</h1>
+        <p class="lead">
+          Cette page accueille tes graphiques (images) et ton analyse. Les titres ci-dessous proviennent du document Forms
+        </p>
+      </div>
+      <p class="note">
+        Pour ajouter un graphe : mets ton image dans le dossier <b>images/</b> et remplace le <code>src</code> correspondant
+        (ex : <code>images/sondage-01.png</code>)
+      </p>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 1 -->
+    <section class="reveal">
+      <div class="section-title">
+        <h2 class="highlight-title">Profil des 275 répondants au sondage :</h2>
+        <p class="lead">Graphique + éléments de lecture</p>
+      </div>
+
+      <figure class="card hero-media reveal" style="margin:0;">
+        <!-- Remplace le src quand tu auras l'image -->
+        <img src="images/sondage-01.png" alt="Profil des 275 répondants au sondage" onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='block';" />
+      </figure>
+
+      <!-- Fallback si l'image n'existe pas encore -->
+      <div class="card prose reveal" style="margin-top:14px; display:none;">
+        <p><strong>Ajoute ici ton graphe :</strong> place une image dans <code>images/</code> puis mets son nom dans <code>src</code> (ex : <code>images/sondage-01.png</code>)</p>
+      </div>
+
+      <div class="card prose reveal" style="margin-top:14px;">
+        <p style="margin:0;">
+          <strong>Analyse :</strong> (écris ici ton commentaire : qui répond, quelles catégories dominent, ce que ça implique pour l’interprétation des résultats)
+        </p>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 2 -->
+    <section class="reveal">
+      <div class="section-title">
+        <h2 class="highlight-title">Quel niveau de connaissance sur le monde taurin ?</h2>
+        <p class="lead">Graphique + interprétation</p>
+      </div>
+
+      <figure class="card hero-media reveal" style="margin:0;">
+        <img src="images/sondage-02.png" alt="Niveau de connaissance sur le monde taurin" onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='block';" />
+      </figure>
+
+      <div class="card prose reveal" style="margin-top:14px; display:none;">
+        <p><strong>Ajoute ici ton graphe :</strong> mets une image dans <code>images/</code> puis remplace <code>src</code> (ex : <code>images/sondage-02.png</code>)</p>
+      </div>
+
+      <div class="card prose reveal" style="margin-top:14px;">
+        <p style="margin:0;">
+          <strong>Analyse :</strong> (que montre la distribution ? y a-t-il une majorité “peu informée” ? comment ça peut biaiser l’avis ?)
+        </p>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 3 -->
+    <section class="reveal">
+      <div class="section-title">
+        <h2 class="highlight-title">Quel avis ?</h2>
+        <p class="lead">Graphique + points saillants</p>
+      </div>
+
+      <figure class="card hero-media reveal" style="margin:0;">
+        <img src="images/sondage-03.png" alt="Avis des répondants" onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='block';" />
+      </figure>
+
+      <div class="card prose reveal" style="margin-top:14px; display:none;">
+        <p><strong>Ajoute ici ton graphe :</strong> mets une image dans <code>images/</code> puis remplace <code>src</code> (ex : <code>images/sondage-03.png</code>)</p>
+      </div>
+
+      <div class="card prose reveal" style="margin-top:14px;">
+        <p style="margin:0;">
+          <strong>Analyse :</strong> (majorité ? polarisation ? nuances ? lien possible avec le niveau de connaissance ?)
+        </p>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 4 -->
+    <section class="reveal">
+      <div class="section-title">
+        <h2 class="highlight-title">Si on vous parle de "Tradition taurine", quel est le tout premier mot qui vous vient à l'esprit ?</h2>
+        <p class="lead">Nuage de mots / top mots + commentaire</p>
+      </div>
+
+      <figure class="card hero-media reveal" style="margin:0;">
+        <img src="images/sondage-04.png" alt="Premier mot associé à 'Tradition taurine'" onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='block';" />
+      </figure>
+
+      <div class="card prose reveal" style="margin-top:14px; display:none;">
+        <p><strong>Ajoute ici ton graphe :</strong> mets une image dans <code>images/</code> puis remplace <code>src</code> (ex : <code>images/sondage-04.png</code>)</p>
+      </div>
+
+      <div class="card prose reveal" style="margin-top:14px;">
+        <p style="margin:0;">
+          <strong>Analyse :</strong> (mots dominants ? champs lexicaux ? ce que ça révèle sur les représentations : violence, tradition, culture, etc.)
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
