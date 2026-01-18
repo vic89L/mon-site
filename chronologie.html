@@ -6,7 +6,9 @@
   <title>Fêtes taurines — Chronologie</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!-- Menu plein écran -->
   <div class="menu" id="menu" aria-hidden="true">
     <button class="menu-close" id="menuClose" aria-label="Fermer le menu">✕</button>
     <div class="menu-inner">
@@ -19,9 +21,12 @@
     </div>
   </div>
 
+  <!-- Topbar -->
   <div class="topbar">
     <div class="container topbar-inner">
-      <div class="brand"><span>Fêtes taurines</span><small>— dossier</small></div>
+      <div class="brand">
+        <span>Fêtes taurines</span><small>— dossier</small>
+      </div>
       <button class="hamburger" id="menuOpen" aria-label="Ouvrir le menu" aria-controls="menu" aria-expanded="false">
         <div class="hamburger-lines" aria-hidden="true"><span></span><span></span><span></span></div>
       </button>
@@ -33,48 +38,319 @@
       <div class="section-title">
         <h1 class="highlight-title">Chronologie</h1>
         <p class="lead">
-          Ajoute tes événements ici. Chaque “t-item” = une année + un texte.
-          Mets la classe <code>break</code> quand tu veux plus d’espace.
+          Repères historiques, juridiques et politiques. Les bulles affichent uniquement l’année ; le mois et le jour sont dans le texte
         </p>
       </div>
-
-      <div class="timeline-wrap card reveal">
-        <div class="timeline">
-
-          <!-- EXEMPLES : remplace par tes tirets -->
-          <div class="t-item break">
-            <div class="t-badge"><div class="year">1850</div></div>
-            <div class="t-text">
-              <b>Loi / repère</b> — Texte de l’événement.
-            </div>
-          </div>
-
-          <div class="t-item">
-            <div class="t-badge"><div class="year">1951</div></div>
-            <div class="t-text">
-              Texte de l’événement.
-            </div>
-          </div>
-
-          <div class="t-item break">
-            <div class="t-badge"><div class="year">2012</div></div>
-            <div class="t-text">
-              <b>Décision / date</b> — Texte de l’événement.
-            </div>
-          </div>
-
-          <!-- AJOUTE AUTANT D’ITEMS QUE TU VEUX -->
-        </div>
-      </div>
-
-      <p class="note">
-        Pour intégrer ta chronologie : prends tes tirets dans ton PDF et colle chaque tiret dans un bloc “t-item”.
-        Si tu veux, colle-moi ici tes tirets et je te renvoie la chronologie remplie automatiquement.
-      </p>
     </section>
+
+    <div class="timeline-wrap card reveal">
+      <div class="timeline">
+
+        <!-- MAIN LINE (France / UE / ONU / général) -->
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🌍</span>
+            <div class="year"><small>XVIe</small></div>
+          </div>
+          <div class="t-text">
+            Premiers témoignages documentés de jeux taurins
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇪🇸</span>
+            <div class="year">1752</div>
+          </div>
+          <div class="t-text">
+            <b>15 août</b> : épisode souvent présenté comme un repère de la corrida moderne (Francisco Romero) : Francisco Romero demande de tuer lui-même le taureau à la fin d’une course après l’avoir fait charger quelques fois ; cependant il semble que des employés dans des abattoirs avaient déjà pratiqué ce type de mise en scène auparavant
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year">1850</div>
+          </div>
+          <div class="t-text">
+            <b>2 juillet — Loi “Grammont”</b> : première grande loi pénale française contre les mauvais traitements envers les animaux domestiques, mais incrimine uniquement les traitements publics, pour davantage protéger la sensibilité du public plutôt que l’intégrité des animaux
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year">1951</div>
+          </div>
+          <div class="t-text">
+            <b>24 avril — Loi n°51-461 (“Ramanory-Sourbet”)</b> : ajoute une exception : la loi de protection ne s’applique pas aux courses de taureaux “lorsqu’une tradition ininterrompue peut être invoquée”
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year">1959</div>
+          </div>
+          <div class="t-text">
+            <b>7 septembre — Décret</b> : précision importante : la tradition doit être “locale” et ininterrompue
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year"><small>CP</small></div>
+          </div>
+          <div class="t-text">
+            Consolidation dans le Code pénal (article 521-1) : l’article réprime les sévices graves/actes de cruauté, mais maintient l’exception pour les courses de taureaux en cas de “tradition locale ininterrompue”
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year">1991</div>
+          </div>
+          <div class="t-text">
+            Création du CRAC (Comité Radicalement Anti Corrida Europe) : association anti-corrida structurante
+          </div>
+        </div>
+
+        <!-- BRANCH: Espagne (2010 -> 2025) -->
+        <div class="branch reveal">
+          <div class="branch-label">Branche — Espagne</div>
+
+          <div class="t-item break reveal" style="position:relative;">
+            <div class="t-badge">
+              <span class="t-flag" aria-hidden="true">🇪🇸</span>
+              <div class="year">2010</div>
+            </div>
+            <div class="t-text">
+              <b>Juillet</b> : vote de l’interdiction des corridas en Catalogne
+            </div>
+          </div>
+
+          <div class="t-item break reveal" style="position:relative;">
+            <div class="t-badge">
+              <span class="t-flag" aria-hidden="true">🇪🇸</span>
+              <div class="year">2013</div>
+            </div>
+            <div class="t-text">
+              <b>12 novembre — Loi 18/2013</b> : la tauromachie est définie comme patrimoine culturel à protéger sur tout le territoire national
+            </div>
+          </div>
+
+          <div class="t-item break reveal" style="position:relative;">
+            <div class="t-badge">
+              <span class="t-flag" aria-hidden="true">🇪🇸</span>
+              <div class="year">2016</div>
+            </div>
+            <div class="t-text">
+              <b>20 octobre</b> : le Tribunal constitutionnel annule l’interdiction catalane en considérant notamment le cadre national de protection culturelle
+            </div>
+          </div>
+
+          <div class="t-item break reveal" style="position:relative;">
+            <div class="t-badge">
+              <span class="t-flag" aria-hidden="true">🇪🇸</span>
+              <div class="year">2025</div>
+            </div>
+            <div class="t-text">
+              <b>7 octobre — ILP “No es mi cultura”</b> : le Congrès rejette la poursuite de l’initiative visant à abroger la loi “patrimoine culturel” de 2013
+            </div>
+          </div>
+        </div>
+
+        <!-- MAIN CONTINUED -->
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year">2011</div>
+          </div>
+          <div class="t-text">
+            Inscription de la corrida à l’Inventaire du patrimoine culturel immatériel (PCI)
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year">2012</div>
+          </div>
+          <div class="t-text">
+            <b>21 septembre — Conseil constitutionnel (décision 2012-271 QPC)</b> : juge conforme à la Constitution l’exception “tradition locale ininterrompue” (contestée par le CRAC et l’association « droits des animaux »)
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year">2015</div>
+          </div>
+          <div class="t-text">
+            <b>16 février — Article 515-14 du Code civil</b> : “Les animaux sont des êtres vivants doués de sensibilité…”, souvent mobilisé dans les argumentaires (sans abolir l’exception pénale taurine)
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year">2015</div>
+          </div>
+          <div class="t-text">
+            <b>1er juin — CAA de Paris</b> : contentieux autour de l’inscription au PCI
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇪🇺</span>
+            <div class="year">2015</div>
+          </div>
+          <div class="t-text">
+            <b>28 octobre — Parlement européen</b> : vote d’un amendement évoqué dans le débat sur l’usage de fonds PAC pour l’élevage lié à la tauromachie
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year">2016</div>
+          </div>
+          <div class="t-text">
+            Depuis <b>janvier</b> : le sujet “protection des mineurs” est repris dans le débat public et parlementaire (références à l’audition/recommandations ONU)
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year">2016</div>
+          </div>
+          <div class="t-text">
+            <b>27 juillet — Conseil d’État (décision n°392277)</b> : met fin au contentieux relatif à l’inscription à l’inventaire PCI (confirmant le non-maintien de cette inscription dans le cadre du litige)
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇺🇳</span>
+            <div class="year">2018</div>
+          </div>
+          <div class="t-text">
+            <b>Comité des droits de l’enfant (ONU)</b> : recommandation d’éloigner les mineurs de la violence de la tauromachie (spectateurs/participants) — document ONU
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇪🇺</span>
+            <div class="year">2020</div>
+          </div>
+          <div class="t-text">
+            <b>22 octobre — Parlement européen</b> : nouveau vote/amendement sur la question des aides PAC aux élevages de taureaux de combat (selon la presse)
+          </div>
+        </div>
+
+        <!-- BRANCH: Portugal (deux points éloignés => deux mini-branches) -->
+        <div class="branch reveal">
+          <div class="branch-label">Branche — Portugal</div>
+
+          <div class="t-item break reveal" style="position:relative;">
+            <div class="t-badge">
+              <span class="t-flag" aria-hidden="true">🇵🇹</span>
+              <div class="year">1928</div>
+            </div>
+            <div class="t-text">
+              Référence fréquente à une interdiction de la mise à mort en arène
+            </div>
+          </div>
+
+          <div class="t-item break reveal" style="position:relative;">
+            <div class="t-badge">
+              <span class="t-flag" aria-hidden="true">🇵🇹</span>
+              <div class="year">2002</div>
+            </div>
+            <div class="t-text">
+              Exception (ex. Barrancos) : levée/exception locale permettant à certains endroits de tuer en arène au nom de la tradition
+            </div>
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year">2022</div>
+          </div>
+          <div class="t-text">
+            <b>11 octobre</b> : dépôt à l’Assemblée nationale d’une proposition de loi visant à abolir la corrida (n°329)
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year">2022</div>
+          </div>
+          <div class="t-text">
+            <b>24 novembre</b> : retrait de la proposition
+          </div>
+        </div>
+
+        <!-- BRANCH: Mexique (2022 -> 2025) -->
+        <div class="branch reveal">
+          <div class="branch-label">Branche — Mexique</div>
+
+          <div class="t-item break reveal" style="position:relative;">
+            <div class="t-badge">
+              <span class="t-flag" aria-hidden="true">🇲🇽</span>
+              <div class="year">2022</div>
+            </div>
+            <div class="t-text">
+              <b>17 juin</b> : décision judiciaire suspendant/interdisant des corridas dans la capitale (rebondissements ensuite)
+            </div>
+          </div>
+
+          <div class="t-item break reveal" style="position:relative;">
+            <div class="t-badge">
+              <span class="t-flag" aria-hidden="true">🇲🇽</span>
+              <div class="year">2023</div>
+            </div>
+            <div class="t-text">
+              <b>Décembre</b> : rebond judiciaire : annulation d’une suspension antérieure par la Cour suprême (selon les suivis de presse/analyses)
+            </div>
+          </div>
+
+          <div class="t-item break reveal" style="position:relative;">
+            <div class="t-badge">
+              <span class="t-flag" aria-hidden="true">🇲🇽</span>
+              <div class="year">2025</div>
+            </div>
+            <div class="t-text">
+              <b>18 mars</b> : adoption d’un cadre de “corridas sans violence” (sans mise à mort, interdiction d’instruments blessants), contesté par les deux camps
+            </div>
+          </div>
+        </div>
+
+        <div class="t-item break reveal">
+          <div class="t-badge">
+            <span class="t-flag" aria-hidden="true">🇫🇷</span>
+            <div class="year">2024</div>
+          </div>
+          <div class="t-text">
+            <b>Novembre</b> : débat au Sénat sur l’interdiction d’accès des moins de 16 ans : le Sénat rejette la proposition
+          </div>
+        </div>
+
+      </div>
+    </div>
   </main>
 
-  <footer><div class="container">© <span id="year"></span></div></footer>
+  <footer>
+    <div class="container">© <span id="year"></span></div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
