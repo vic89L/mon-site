@@ -6,7 +6,9 @@
   <title>Fêtes taurines — Législation</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!-- Menu plein écran -->
   <div class="menu" id="menu" aria-hidden="true">
     <button class="menu-close" id="menuClose" aria-label="Fermer le menu">✕</button>
     <div class="menu-inner">
@@ -19,9 +21,12 @@
     </div>
   </div>
 
+  <!-- Topbar -->
   <div class="topbar">
     <div class="container topbar-inner">
-      <div class="brand"><span>Fêtes taurines</span><small>— dossier</small></div>
+      <div class="brand">
+        <span>Fêtes taurines</span><small>— dossier</small>
+      </div>
       <button class="hamburger" id="menuOpen" aria-label="Ouvrir le menu" aria-controls="menu" aria-expanded="false">
         <div class="hamburger-lines" aria-hidden="true"><span></span><span></span><span></span></div>
       </button>
@@ -29,24 +34,179 @@
   </div>
 
   <main class="container">
+    <!-- Titre page -->
     <section class="reveal">
       <div class="section-title">
         <h1 class="highlight-title">Législation</h1>
-        <p class="lead">France et autres pays (état de l’art).</p>
+        <p class="lead">France et autres pays — état de l’art (2026).</p>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- I -->
+    <section class="reveal">
+      <div class="section-title">
+        <h2 class="highlight-title">I/ Corrida espagnole</h2>
+        <p class="lead">Cadres juridiques, interdictions partielles et controverses contemporaines.</p>
       </div>
 
-      <div class="card prose">
-        <p><strong>France</strong> — Mets ici ton contenu “état de l’art” (ton document).</p>
-        <p><strong>Espagne</strong> — Résumé / statut culturel / décisions.</p>
-        <p><strong>Portugal</strong> — Cadre spécifique.</p>
-        <p><strong>Amériques</strong> — Exemples de cadres juridiques variés.</p>
+      <div class="card prose reveal">
+        <p>
+          Ce modèle repose sur un rituel en trois actes (le <em>tercio</em>) où l'animal est physiquement affaibli
+          par des piques et des banderilles avant d'être mis à mort par le matador.
+        </p>
+
+        <div class="country-grid">
+          <article class="card prose country-card reveal">
+            <div class="country-badge">Espagne</div>
+            <p>
+              Bien que la pratique soit protégée par le statut de « Patrimoine Culturel », la fracture sociale est
+              immense en 2026. La corrida reste légale sur la majorité du territoire, mais elle est interdite aux
+              Canaries et très marginalisée en Catalogne.
+            </p>
+            <p>
+              Le débat actuel porte sur la suppression des subventions publiques et le retrait de la protection
+              culturelle nationale.
+            </p>
+          </article>
+
+          <article class="card prose country-card reveal">
+            <div class="country-badge">France</div>
+            <p>
+              La corrida est interdite sur 90 % du territoire français, mais elle bénéficie d'une dérogation légale
+              dans le Sud (Nîmes, Arles, Dax, Bayonne, etc.) au nom d'une « tradition locale ininterrompue ».
+            </p>
+            <p>
+              La controverse en 2026 se cristallise sur l'interdiction de l'accès aux arènes pour les mineurs de
+              moins de 16 ans.
+            </p>
+          </article>
+
+          <article class="card prose country-card reveal">
+            <div class="country-badge">Colombie</div>
+            <p>
+              C'est le changement le plus radical de cette décennie. Après un vote historique en 2024, le pays est
+              en phase de transition.
+            </p>
+            <p>
+              En 2026, les dernières corridas avec mise à mort sont organisées, car l'interdiction totale et
+              définitive entre en vigueur en 2027.
+            </p>
+          </article>
+
+          <article class="card prose country-card reveal">
+            <div class="country-badge">Mexique</div>
+            <p>
+              La situation est instable. La Cour Suprême mexicaine intervient régulièrement pour suspendre ou
+              autoriser les corridas dans la capitale.
+            </p>
+            <p>
+              Si certains États mexicains l'ont interdite, elle reste très ancrée dans les zones rurales, créant un
+              clivage marqué entre les grandes métropoles progressistes et les campagnes traditionnelles.
+            </p>
+          </article>
+
+          <article class="card prose country-card reveal" style="grid-column: 1 / -1;">
+            <div class="country-badge">Pérou, Équateur et Venezuela</div>
+            <ul class="bullets">
+              <li>
+                <b>Au Pérou</b>, la pratique reste très populaire et légale, notamment lors des fêtes religieuses en altitude.
+              </li>
+              <li>
+                <b>En Équateur</b>, la mise à mort est interdite à Quito mais autorisée ailleurs, créant une « géographie de la mort » complexe.
+              </li>
+              <li>
+                <b>Au Venezuela</b>, la pratique s'éteint lentement pour des raisons économiques et politiques, sans interdiction formelle nationale.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- II -->
+    <section class="reveal">
+      <div class="section-title">
+        <h2 class="highlight-title">II/ Les fêtes traditionnelles sans blessure ni mise à mort</h2>
+        <p class="lead">Pratiques sportives, formes hybrides et variantes « non-violentes ».</p>
       </div>
 
-      <p class="note">Si tu me colles ton texte complet ici, je te le remets bien mis en page.</p>
+      <div class="card prose reveal">
+        <div class="country-grid">
+          <article class="card prose country-card reveal">
+            <div class="country-badge">France</div>
+            <h3 class="h3">L'excellence sportive (Camargue et Landes)</h3>
+            <ul class="bullets">
+              <li>
+                <b>La Course Camarguaise</b> : le but est de décrocher des attributs (cocardes) fixés aux cornes du taureau.
+                Le taureau (appelé « biòu ») est le roi de l'arène : il fait une carrière d'athlète et retourne dans son pré chaque soir.
+              </li>
+              <li>
+                <b>La Course Landaise</b> : un sport de haute voltige où des hommes (écarteurs et sauteurs) affrontent des vaches landaises
+                pour réaliser des figures acrobatiques.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card prose country-card reveal">
+            <div class="country-badge">Portugal</div>
+            <h3 class="h3">La « Tourada » hybride</h3>
+            <p>
+              Au Portugal, la mise à mort en public est interdite depuis le XIXe siècle. Si l'animal reçoit tout de même
+              des piques (posées par les cavaliers), il n'est pas tué dans l'arène mais généralement abattu à l'abri des
+              regards ou soigné pour la reproduction.
+            </p>
+            <p>
+              C'est une forme de compromis qui reste cependant critiquée par les défenseurs des animaux pour la douleur infligée.
+            </p>
+          </article>
+
+          <article class="card prose country-card reveal">
+            <div class="country-badge">Espagne</div>
+            <h3 class="h3">L'essor des « Recortes »</h3>
+            <p>
+              Parallèlement à la corrida, les concours de Recortes explosent en popularité en 2026.
+              Des athlètes affrontent le taureau à mains nues, réalisant des sauts et des esquives sans jamais toucher
+              l'animal avec une arme.
+            </p>
+            <p>
+              C'est la tradition la mieux acceptée par la jeune génération espagnole.
+            </p>
+          </article>
+
+          <article class="card prose country-card reveal">
+            <div class="country-badge">Costa Rica</div>
+            <h3 class="h3">« Toros a la tica »</h3>
+            <p>
+              Une tradition extrêmement populaire où des centaines de citoyens descendent dans l'arène pour jouer avec le taureau.
+              La règle d'or est la « non-violence » envers l'animal : il est strictement interdit de le frapper ou de le blesser.
+            </p>
+            <p>
+              C'est un spectacle familial diffusé massivement à la télévision.
+            </p>
+          </article>
+
+          <article class="card prose country-card reveal" style="grid-column: 1 / -1;">
+            <div class="country-badge">États-Unis</div>
+            <h3 class="h3">La corrida « Bloodless » (sans sang)</h3>
+            <p>
+              Dans certaines communautés d'origine portugaise (notamment en Californie), des corridas sont organisées.
+              La différence : les banderilles sont remplacées par des bandes de velcro que l'on colle sur une protection
+              posée sur le dos du taureau. L'animal n'est jamais piqué ni tué.
+            </p>
+          </article>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer><div class="container">© <span id="year"></span></div></footer>
+  <footer>
+    <div class="container">© <span id="year"></span></div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
