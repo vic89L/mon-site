@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fêtes taurines — Bibliographie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="menu" id="menu" aria-hidden="true">
+    <button class="menu-close" id="menuClose" aria-label="Fermer le menu">✕</button>
+    <div class="menu-inner">
+      <ul class="menu-list" aria-label="Menu">
+        <li><a href="index.html" data-link>Présentation des fêtes taurines</a></li>
+        <li><a href="legislation.html" data-link>Législation (France & autres pays)</a></li>
+        <li><a href="chronologie.html" data-link>Chronologie</a></li>
+        <li><a class="active" href="bibliographie.html" data-link>Bibliographie</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand"><span>Fêtes taurines</span><small>— dossier</small></div>
+      <button class="hamburger" id="menuOpen" aria-label="Ouvrir le menu" aria-controls="menu" aria-expanded="false">
+        <div class="hamburger-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="reveal">
+      <div class="section-title">
+        <h1 class="highlight-title">Bibliographie</h1>
+        <p class="lead">Ajoute ici toutes tes sources (livres, articles, rapports, jurisprudence…).</p>
+      </div>
+
+      <div class="card prose">
+        <p><strong>Exemples</strong></p>
+        <p>• Auteur — <em>Titre</em>, année, éditeur.</p>
+        <p>• Institution — <em>Rapport</em>, année.</p>
+        <p>• Décision — <em>Référence</em>, date.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© <span id="year"></span></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
