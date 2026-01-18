@@ -430,3 +430,32 @@ footer{
 .timeline::before{
   background: var(--wine);
 }
+
+/* Image pleine largeur dans un encadré */
+.hero-media{
+  overflow: hidden;
+  padding: 0;
+}
+.hero-media img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Sous-titre de thème (hors cadre) */
+.theme-title{
+  margin: 26px 0 10px;
+  font-weight: 950;
+  letter-spacing: -0.01em;
+  color: var(--wine);
+  font-size: 20px;
+}
+
+/* Cartes Q/R */
+.qa-card .q{
+  font-weight: 950;
+  margin: 0 0 10px;
+}
+.qa-card .a{
+  margin: 0;
+}
