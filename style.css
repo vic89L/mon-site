@@ -479,3 +479,9 @@ footer{
   border-radius: 12px;
   border: 1px solid var(--line);
 }
+
+/* Sécurité : si JS ne tourne pas, on ne veut pas de page vide */
+.no-js .reveal{
+  opacity: 1;
+  transform: none;
+}
