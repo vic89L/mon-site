@@ -28,18 +28,34 @@ document.querySelectorAll("[data-link]").forEach(a => {
   a.addEventListener("click", () => closeMenu());
 });
 
-// Scroll reveal (IntersectionObserver)
-const observer = new IntersectionObserver((entries) => {
-  for (const entry of entries){
-    if(entry.isIntersecting){
-      entry.target.classList.add("is-visible");
-      observer.unobserve(entry.target);
+// Scroll reveal (avec fallback iOS / anciens navigateurs)
+const revealEls = Array.from(document.querySelectorAll(".reveal"));
+
+function showAllReveals(){
+  revealEls.forEach(el => el.classList.add("is-visible"));
+}
+
+// Si IntersectionObserver n'existe pas → on affiche tout
+if (!("IntersectionObserver" in window)) {
+  showAllReveals();
+} else {
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries){
+      if(entry.isIntersecting){
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
     }
-  }
-}, { threshold: 0.12 });
+  }, {
+    threshold: 0.12,
+    rootMargin: "0px 0px -10% 0px" // aide sur mobile
+  });
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  revealEls.forEach(el => observer.observe(el));
 
-// Footer year
-const y = document.getElementById("year");
-if (y) y.textContent = new Date().getFullYear();
+  // Fallback iOS : si après 1s rien n'est visible, on affiche tout
+  setTimeout(() => {
+    const anyVisible = revealEls.some(el => el.classList.contains("is-visible"));
+    if (!anyVisible) showAllReveals();
+  }, 1000);
+}
